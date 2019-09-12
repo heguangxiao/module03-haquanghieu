@@ -1,0 +1,19 @@
+<div *ngIf="message"><p style="color: red">{{ message }}</p></div>
+<div class="container-fluid" *ngIf="book">
+  <div>
+    <p>Book Detail</p>
+  </div>
+  <div>
+    <button (click)="back()" >Books List</button>
+  </div>
+  <div>
+    <span>Title: {{book.title}}</span><br/>
+    <span>Author: {{book.author}}</span><br/>
+    <span>Description:</span><br/>
+    <span>{{book.title}}</span>
+  </div>
+  <div class="text-center">
+    <button (click)=(deleteBook(book.id)) class="btn btn-success" style="margin-right: 5px">Delete</button>
+    <button (click)="back()" class="btn btn-success" style="margin-right: 5px">Back</button>
+  </div>
+</div>

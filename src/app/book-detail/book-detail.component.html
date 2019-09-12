@@ -1,0 +1,16 @@
+<div *ngIf="message"><p style="color: red">{{ message }}</p></div>
+<div class="container-fluid" *ngIf="book">
+  <div>
+    <p>Book Detail</p>
+  </div>
+  <hr/>
+  <div>
+    <button (click)="index()" >Books List</button>
+  </div>
+  <div>
+    <span>Title: {{book.title}}</span><br/>
+    <span>Author: {{book.author}}</span><br/>
+    <span>Description:</span><br/>
+    <span>{{book.title}}</span>
+  </div>
+</div>

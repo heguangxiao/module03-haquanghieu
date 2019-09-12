@@ -1,0 +1,32 @@
+<p>Books List</p>
+<hr/>
+<p *ngIf="books">Have {{books.length}} the book.</p>
+<button style="float: right;margin-right: 20px" [routerLink]="['..', 'add']" >Add new Book</button>
+<br/>
+<br/>
+<br/>
+<div *ngIf="books" class="container-fluid">
+  <form>
+    <table class="table table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col"></th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td scope="row">{{book.id}}</td>
+        <td [routerLink]="['..', 'detail', book.id]">{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>
+          <span (click)="deleteBook(book.id)">Delete</span>
+        </td>
+        <td>
+          <span (click)="editBook(book.id)">Edit</span>
+        </td>
+      </tr>
+    </table>
+    <div *ngIf="message" style="text-align: center"><p style="color: red">{{ message }}</p></div>
+  </form>
+
+</div>
